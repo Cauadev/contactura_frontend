@@ -1,0 +1,36 @@
+:host{
+    display: flex;
+    justify-content: center;
+    margin: 180px 0px;
+}
+
+.mat-form-field{
+    width: 100%;
+    min-width: 300px;
+}
+
+mat-card-title{
+    padding: 20px 10px 50px 10px;
+}
+
+mat-card-title, mat-card-content, mat-card-actions{
+display: flex;
+justify-content: center;
+}
+
+.font-style{
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.logo_grid{
+    display: grid;
+    grid-template-columns: auto;
+}

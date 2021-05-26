@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+
+<section>
+    <div class="titulo">
+        <span>Usuários</span>
+    </div>
+</section>
+
+<section>
+    <div class="button_new_contact">
+        <button mat-raised-button color="primary"><mat-icon>add</mat-icon>Novo Usuario</button>
+    </div>
+</section>
+
+<section>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Menu</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Nome">Cauã</td>
+                    <td data-label="Username">cauadev</td>
+                    <td data-label="Status">Admin</td>
+                    <td data-label="Menu">
+                        <button mat-raised-button style="margin-right: 5px;" color="accent"><mat-icon>build</mat-icon>Editar</button>
+                        <button mat-raised-button color="warn"><mat-icon>restore_from_trash</mat-icon>Deletar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

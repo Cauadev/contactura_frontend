@@ -1,0 +1,100 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar{
+    font-size: 18px;
+    background-color: #ddd;
+    padding-bottom: 10px;
+}
+
+.navbar-toogle{
+    position: relative;
+    top: 10%;
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    color: #000;
+}
+
+.logo{
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.main-nav{
+    list-style-type: none;
+    display: none;
+}
+
+.main-nav li{
+    text-align: center;
+    margin: 15px auto;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: #000;
+}
+
+.nav-links{
+    margin-left: 40px;
+}
+
+.active{
+    display: block;
+}
+
+.logo-title{
+    vertical-align: super;
+    margin: 0px 20px 0px 20px;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.menu-icon{
+    font-size: 50px;
+    margin-right: 35px;
+    margin-top: 5px;
+}
+
+@media screen and (min-width: 769px){
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 0;
+        height: 70px;
+        align-items: center;
+    }
+
+    .main-nav{
+        display: flex;
+        margin-left: 30px;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .main-nav li{
+        margin: 10px;
+    }
+
+    .logo{
+        margin-top: 0;
+        margin-left: 10px;
+    }
+
+    .navbar-toogle{
+        display: none;
+    }
+
+    .nav-links a:hover{
+        color: #459645;
+        cursor: pointer;
+    }
+
+
+}

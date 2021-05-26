@@ -1,0 +1,81 @@
+.titulo{
+    display: flex;
+    justify-content: center;
+    span{
+        font-weight: 400;
+        font-size: 30px;
+        padding: 40px;
+    }
+}
+
+.button_new_contact{
+    float: right;
+    padding-right: 16px;
+    margin-bottom: 15px;
+}
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    table-layout: fixed;
+    width: 100%;
+}
+
+table tr {
+    background-color: #f8f8f8;
+}
+
+table th,
+table td {
+    padding: 0.625em;
+    text-align: center;
+}
+
+table th {
+    font-size: 0.85em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 865px) {
+    table{
+        border: 0;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr{
+        border-bottom: 2px solid #ddd;
+        display: block;
+        margin-bottom: 0.625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: 0.8em;
+        text-align: right;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+}
