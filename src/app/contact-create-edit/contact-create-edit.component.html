@@ -1,36 +1,40 @@
 <app-navbar></app-navbar>
 <section>
     <div class="title">
-        <h1>Cadastrar Novo Usuario</h1>
+        <h1>Cadastrar Novo Contato</h1>
     </div>
 </section>
 
 <section>
 
 
-    <form class="container">
+    <form class="container" [formGroup]="contactForm">
 
         <div class="col-2">
                 <div class="item">
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome" class="form-control">
+                    <label for="name">Nome:</label>
+                    <input type="text" name="nome" class="form-control" formControlName="name">
             </div>
 
             <div class="item">
-                    <label for="username">Username:</label>
-                    <input type="text" name="username" class="form-control">
+                    <label for="phone">Phone:</label>
+                    <input type="text" name="phone" class="form-control" formControlName="phone">
             </div>
 
         </div>
 
 
                 <div class="item">
-                    <label for="phone">Senha:</label>
-                    <input type="password" name="senha" class="form-control">
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" class="form-control" formControlName="email">
                 </div>
 
-                <div style="margin-top: 10px;">
-                    <button mat-raised-button color="primary">Salvar Usuario</button>
+                <div style="margin-top: 10px;" [ngStyle]="{'display': contact === null ? 'block' : 'none' }">
+                    <button mat-raised-button color="primary" (click)="createContact()">Salvar Contato</button>
+                </div>
+
+                <div style="margin-top: 10px;" [ngStyle]="{'display': contact !== null ? 'block' : 'none' }">
+                    <button mat-raised-button color="primary" (click)="updateContact()">Editar Contato</button>
                 </div>
     </form>
 

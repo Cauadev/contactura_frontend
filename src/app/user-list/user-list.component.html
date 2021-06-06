@@ -8,7 +8,7 @@
 
 <section>
     <div class="button_new_contact">
-        <button mat-raised-button color="primary"><mat-icon>add</mat-icon>Novo Usuario</button>
+        <button (click)="goToCreate()" mat-raised-button color="primary"><mat-icon>add</mat-icon>Novo Usuario</button>
     </div>
 </section>
 
@@ -24,13 +24,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td data-label="Nome">Cauã</td>
-                    <td data-label="Username">cauadev</td>
-                    <td data-label="Status">Admin</td>
+                <tr *ngFor="let user of userList">
+                    <td data-label="Nome">{{user.name}}</td>
+                    <td data-label="Username">{{user.username}}</td>
+                    <td data-label="Status" *ngIf="user.admin == true">admin</td>
+                    <td data-label="Status" *ngIf="user.admin == false">user</td>
                     <td data-label="Menu">
-                        <button mat-raised-button style="margin-right: 5px;" color="accent"><mat-icon>build</mat-icon>Editar</button>
-                        <button mat-raised-button color="warn"><mat-icon>restore_from_trash</mat-icon>Deletar</button>
+                        <button (click)="editUser(user)" mat-raised-button style="margin-right: 5px;" color="accent"><mat-icon>build</mat-icon>Editar</button>
+                        <button (click)="deleteUser(user.id)" mat-raised-button color="warn"><mat-icon>restore_from_trash</mat-icon>Deletar</button>
                     </td>
                 </tr>
             </tbody>

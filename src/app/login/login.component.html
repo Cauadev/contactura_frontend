@@ -12,19 +12,23 @@
         </mat-card-title>
 
         <mat-card-content>
-            <form>
+            <form [formGroup]="loginForm">
                 <div>
                     <mat-form-field>
-                        <input matInput placeholder="Username" type="text" value="">
+                        <mat-label>Insira seu username</mat-label>
+                        <input matInput placeholder="Username" type="email" value="" formControlName="username" formControlName="username" required>
+                        <mat-error *ngIf="loginForm.invalid">{{getErrorMessageEmail()}}</mat-error>
                       </mat-form-field>
                     <mat-form-field>
-                        <input matInput placeholder="Senha" type="password" value="">
+                        <mat-label>Insira sua senha</mat-label>
+                        <input matInput placeholder="Senha" type="password" value="" formControlName="password" formControlName="password" required>
+                        <mat-error *ngIf="loginForm.invalid">{{getErrorMessagePassword()}}</mat-error>
                       </mat-form-field>
                 </div>
             </form>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-raised-button color="primary">Entrar</button>
+            <button mat-raised-button color="primary" (click)="login()">Entrar</button>
         </mat-card-actions>
     </mat-card>
 </section>

@@ -33,6 +33,16 @@
     margin-bottom: 30px;
 }
 
+.col-2 > .check{
+    display: flex;
+    align-items:flex-end;
+    padding-bottom: 10px;
+
+    mat-checkbox{
+        padding-right: 10px;
+    }
+}
+
 @media screen and (max-width: 850px) {
     .container .col-2 {
         flex-direction: column;

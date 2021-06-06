@@ -8,7 +8,7 @@
 
 <section>
     <div class="button_new_contact">
-        <button mat-raised-button color="primary"><mat-icon>add</mat-icon>Novo Contato</button>
+        <button (click)="goToCreate()" mat-raised-button color="primary" ><mat-icon>add</mat-icon>Novo Contato</button>
     </div>
 </section>
 
@@ -24,13 +24,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td data-label="Nome">Caua</td>
-                    <td data-label="Email">cauadev@gmail.com</td>
-                    <td data-label="Fone">(81) 984019242</td>
+                <tr *ngFor="let contact of contactList">
+                    <td data-label="Nome">{{contact.name}}</td>
+                    <td data-label="Email">{{contact.email}}</td>
+                    <td data-label="Fone">{{contact.phone}}</td>
                     <td data-label="Menu">
-                        <button mat-raised-button style="margin-right: 5px;" color="accent"><mat-icon>build</mat-icon>Editar</button>
-                        <button mat-raised-button color="warn"><mat-icon>restore_from_trash</mat-icon>Deletar</button>
+                        <button (click)="editContact(contact)" mat-raised-button style="margin-right: 5px;" color="accent"><mat-icon>build</mat-icon>Editar</button>
+                        <button mat-raised-button color="warn" (click)="deleteContact(contact.id)"><mat-icon>restore_from_trash</mat-icon>Deletar</button>
                     </td>
                 </tr>
             </tbody>

@@ -1,37 +1,48 @@
 <app-navbar></app-navbar>
 <section>
     <div class="title">
-        <h1>Cadastrar Novo Contato</h1>
+        <h1>Cadastrar Novo Usuario</h1>
     </div>
 </section>
 
 <section>
 
 
-    <form class="container">
+    <form class="container" [formGroup]="userForm">
 
         <div class="col-2">
                 <div class="item">
                     <label for="nome">Nome:</label>
-                    <input type="text" name="nome" class="form-control">
+                    <input type="text" name="nome" class="form-control" formControlName="name">
             </div>
 
             <div class="item">
-                    <label for="phone">Phone:</label>
-                    <input type="text" name="phone" class="form-control">
+                    <label for="username">Usuario:</label>
+                    <input type="text" name="username" class="form-control" formControlName="username">
             </div>
 
         </div>
 
-
+        <div class="col-2">
                 <div class="item">
-                    <label for="email">Email:</label>
-                    <input type="text" name="email" class="form-control">
+                    <label for="password">Senha:</label>
+                    <input type="password" name="senha" class="form-control" formControlName="password">
                 </div>
 
-                <div style="margin-top: 10px;">
-                    <button mat-raised-button color="primary">Salvar Contato</button>
+                <div class="item check">
+                    <mat-checkbox name="admin" color="primary" formControlName="admin"></mat-checkbox>
+                    <label for="admin">Definir como administrador?</label>
                 </div>
+
+            </div>
+
+            <div style="margin-top: 10px;" [ngStyle]="{'display': user === null ? 'block' : 'none' }">
+                <button mat-raised-button color="primary" (click)="createUser()">Salvar Usuario</button>
+            </div>
+
+            <div style="margin-top: 10px;" [ngStyle]="{'display': user !== null ? 'block' : 'none' }">
+                <button mat-raised-button color="primary" (click)="updateUser()">Editar Usuario</button>
+            </div>
     </form>
 
 
